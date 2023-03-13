@@ -1,0 +1,71 @@
+package homework;
+import java.util.*;
+public class remove_duplicate {
+
+	
+	Scanner sc = new Scanner(System.in);
+	int arr[] = new int[10];
+	int dup[]=new int [10];
+	int size,i,j,temp;
+	
+	void Accept()
+	{
+		System.out.print("Enter Array Size : ");
+		size=sc.nextInt();
+		
+		
+		System.out.println("Enter Array Elements : ");
+		for(int i=0;i<size;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+	}
+	
+	void Display()
+	{
+		
+		System.out.println("Sorted Array : ");
+		for(int i=0;i<size;i++)
+		{
+			for(int j=i+1;j<size;j++)
+			{
+				if(arr[i]>arr[j])
+				{
+					temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+
+		for(int i=0;i<size;i++)
+		{
+			System.out.print(arr[i]+ "  ");
+		}
+		
+		
+		System.out.println("\nRemove Duplicate : ");
+		
+		for(int i=0;i<size;i++)
+		{
+			
+				if(arr[i]!=arr[i+1])
+				{
+					System.out.print(arr[i]+" ");
+				}
+				
+			
+		}
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+				
+		remove_duplicate obj = new remove_duplicate();
+		obj.Accept();
+		obj.Display();
+	}
+
+}
